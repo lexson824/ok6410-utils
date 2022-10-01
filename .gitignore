@@ -1,0 +1,14 @@
+*.o
+*.a
+
+# uboot
+.depend
+System.map
+u-boot
+u-boot.*
+hello_world
+hello_world.*
+
+# dnw
+*.cmd
+*.mod
