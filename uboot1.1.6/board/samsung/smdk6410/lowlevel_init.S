@@ -101,8 +101,8 @@ lowlevel_init:
 	/* init system clock */
 	bl system_clock_init
 	/* for GDB */
-die:
-	b die
+#die:
+#	b die
 
 	/* for UART */
 	bl uart_asm_init
