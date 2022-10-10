@@ -1,5 +1,6 @@
 *.o
 *.a
+*.ko
 
 # uboot
 .depend
@@ -12,3 +13,6 @@ hello_world.*
 # dnw
 *.cmd
 *.mod
+*.mod.c
+*.order
+*.symvers

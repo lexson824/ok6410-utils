@@ -1,18 +1,10 @@
-KERNELDIR ?=  /lib/modules/`uname -r`/build
+ifneq ($(KERNELRELEASE),)
+obj-m:=dnw.o
+else
+KDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
-INSTALLDIR ?= ../
-CROSS_COMPILE ?=
-CC ?= $(CROSS_COMPILE)gcc
-
-obj-m := secbulk.o
-
 all:
-	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
-
-install: all
-	cp *.ko $(INSTALLDIR)
-
+	make -C $(KDIR) M=$(PWD) modules
 clean:
-	rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions *.markers *.symvers *.order
-
-.PHONY: modules modules_install clean
+	rm -f *.ko *.o *.symvers *.cmd *.mod.c *.order
+endif

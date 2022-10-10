@@ -20,4 +20,3 @@ install: all
 clean:
 	make -C $(dnw_src) clean
 	make -C /lib/modules/`uname -r`/build M=$(driver_src) clean
-
